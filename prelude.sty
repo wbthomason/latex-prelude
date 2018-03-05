@@ -1,0 +1,95 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{prelude}[2018/03/05 Standard prelude of packages and commands]
+
+% Packages
+
+%% Fonts/encoding
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{mathptmx} % assumes new font selection scheme installed
+
+%% Pseudocode
+\RequirePackage{algpseudocode}
+\RequirePackage{algorithm}
+
+%% Math
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{mathabx}
+
+%% Syntax highlighting: Requires pygmentize and shell escape
+\RequirePackage{minted}
+
+%% Biblatex and associated packages
+\RequirePackage[english]{babel}
+\RequirePackage[natbib=true,style=numeric-comp]{biblatex}
+\RequirePackage{csquotes}
+
+%% Colors
+\RequirePackage{color}
+
+%% Enumeration customization
+% Because the IEEE template has \labelindent defined for legacy reasons
+\let\labelindent\relax
+\RequirePackage{enumitem}
+
+%% Footnotes
+\RequirePackage[bottom]{footmisc}% places footnotes at page bottom
+
+%% Figures
+\RequirePackage[font={footnotesize,it}]{caption}
+\RequirePackage{epsfig}
+\RequirePackage{graphicx}
+\RequirePackage{subfig}
+\RequirePackage{tikz}
+% Requires dot2tex installed
+\RequirePackage{dot2texi}
+
+%% Notes/questions
+\RequirePackage{todonotes}
+
+%% Underlining/emphasis
+\RequirePackage[normalem]{ulem}
+
+%% Conditional inclusion
+\RequirePackage{version}
+
+%% Links, refs, etc.
+\RequirePackage[bookmarks=true]{hyperref}
+
+% Package config
+\usemintedstyle{colorful}
+
+\usetikzlibrary{arrows, decorations.markings, positioning, shapes}
+\tikzstyle{vecArrow} = [thick, decoration={markings,mark=at position
+1 with {\arrow[semithick]{open triangle 60}}},
+double distance=1.4pt, shorten >= 5.5pt,
+preaction = {decorate},
+postaction = {draw,line width=1.4pt, white,shorten >= 4.5pt}]
+\tikzstyle{innerWhite} = [semithick, white,line width=1.4pt, shorten >= 4.5pt]
+
+% Custom commands
+\newcommand{\appref}[1]{Appendix~\ref{appendix:#1}}
+\newcommand{\secref}[1]{Section~\ref{sec:#1}}
+\newcommand{\tblref}[1]{Table~\ref{table:#1}}
+\newcommand{\figref}[1]{Figure~\ref{fig:#1}}
+\newcommand{\listingref}[1]{Listing~\ref{listing:#1}}
+\newcommand{\linref}[1]{line~\ref{line:#1}}
+\newcommand{\defref}[1]{Definition~\ref{def:#1}}
+\newcommand{\lemref}[1]{Lemma~\ref{lemma:#1}}
+\newcommand{\thmref}[1]{Theorem~\ref{thm:#1}}
+\newcommand{\eqnref}[1]{Formula~\ref{formula:#1}}
+\newcommand{\algoref}[1]{Algorithm~\ref{alg:#1}}
+\newcommand{\bftt}[1]{{\ttfamily\bfseries{}#1}}
+\newcommand{\kw}[1]{\bftt{#1}}
+\newcommand{\eg}{{e.g.}}
+\newcommand{\cf}{{cf.}}
+\newcommand{\ie}{{i.e.}}
+\newcommand{\etc}{{etc.\/}}
+\newcommand{\wtnote}[1]{\ifbool{comments}{\textcolor{green}{\textbf{WT:} #1}}~}
+\newcommand{\wttodo}[1]{\ifbool{comments}{\todo[inline,author=WT,color=green!40]{#1}}~}
+\newcommand{\rknote}[1]{\ifbool{comments}{\textcolor{blue}{\textbf{RK:} #1}}~}
+
+% Custom theorems
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
