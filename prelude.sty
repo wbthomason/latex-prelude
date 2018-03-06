@@ -14,6 +14,7 @@
 
 %% Math
 \RequirePackage{amsmath}
+\RequirePackage{amsthm}
 \RequirePackage{amssymb}
 \RequirePackage{mathabx}
 
@@ -91,5 +92,8 @@ postaction = {draw,line width=1.4pt, white,shorten >= 4.5pt}]
 \newcommand{\rknote}[1]{\ifbool{comments}{\textcolor{blue}{\textbf{RK:} #1}}~}
 
 % Custom theorems
+\theoremstyle{definition}
 \newtheorem{definition}{Definition}
+
+\theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
