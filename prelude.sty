@@ -4,59 +4,59 @@
 % Packages
 
 %% Fonts/encoding
-\RequirePackage[utf8]{inputenc}
-\RequirePackage[T1]{fontenc}
-% \RequirePackage{mathptmx} % assumes new font selection scheme installed
+\@ifpackageloaded{inputenc}{}{\RequirePackage[utf8]{inputenc}}
+\@ifpackageloaded{fontenc}{}{\RequirePackage[T1]{fontenc}}
+% \@ifpackageloaded{mathptmx}{}{\RequirePackage{mathptmx}} % assumes new font selection scheme installed
 
 %% Pseudocode
-\RequirePackage{algpseudocode}
-\RequirePackage{algorithm}
+\@ifpackageloaded{algpseudocode}{}{\RequirePackage{algpseudocode}}
+\@ifpackageloaded{algorithm}{}{\RequirePackage{algorithm}}
 
 %% Math
-\RequirePackage{amsmath}
-\RequirePackage{amsthm}
-\RequirePackage{amssymb}
-\RequirePackage{mathabx}
+\@ifpackageloaded{amsmath}{}{\RequirePackage{amsmath}}
+\@ifpackageloaded{amsthm}{}{\let\proof\relax \let\endproof\relax \RequirePackage{amsthm}}
+\@ifpackageloaded{amssymb}{}{\RequirePackage{amssymb}}
+\@ifpackageloaded{mathabx}{}{\RequirePackage{mathabx}}
 
 %% Biblatex and associated packages
-\RequirePackage[english]{babel}
-\RequirePackage[natbib=true,style=numeric-comp]{biblatex}
-\RequirePackage{csquotes}
+\@ifpackageloaded{babel}{}{\RequirePackage[english]{babel}}
+\@ifpackageloaded{biblatex}{}{\RequirePackage[natbib=true,style=numeric-comp]{biblatex}}
+\@ifpackageloaded{csquotes}{}{\RequirePackage{csquotes}}
 
 %% Colors
-\RequirePackage{color}
+\@ifpackageloaded{color}{}{\RequirePackage{color}}
 
 %% Enumeration customization
 % Because the IEEE template has \labelindent defined for legacy reasons
 \let\labelindent\relax
-\RequirePackage{enumitem}
+\@ifpackageloaded{enumitem}{}{\RequirePackage{enumitem}}
 
 %% Footnotes
-\RequirePackage[bottom]{footmisc}% places footnotes at page bottom
+\@ifpackageloaded{footmisc}{}{\RequirePackage[bottom]{footmisc}}% places footnotes at page bottom
 
 %% Figures
-\RequirePackage[font={footnotesize,it}]{caption}
-\RequirePackage{epsfig}
-\RequirePackage{graphicx}
-\RequirePackage{subfig}
-\RequirePackage{tikz}
+\@ifpackageloaded{caption}{}{\RequirePackage[font={footnotesize,it}]{caption}}
+\@ifpackageloaded{epsfig}{}{\RequirePackage{epsfig}}
+\@ifpackageloaded{graphicx}{}{\RequirePackage{graphicx}}
+\@ifpackageloaded{subfig}{}{\RequirePackage{subfig}}
+\@ifpackageloaded{tikz}{}{\RequirePackage{tikz}}
 % Requires dot2tex installed
-\RequirePackage{dot2texi}
+\@ifpackageloaded{dot2texi}{}{\RequirePackage{dot2texi}}
 
 %% Syntax highlighting: Requires pygmentize and shell escape
-\RequirePackage{minted}
+\@ifpackageloaded{minted}{}{\RequirePackage{minted}}
 
 %% Notes/questions
-\RequirePackage{todonotes}
+\@ifpackageloaded{todonotes}{}{\RequirePackage{todonotes}}
 
 %% Underlining/emphasis
-\RequirePackage[normalem]{ulem}
+\@ifpackageloaded{ulem}{}{\RequirePackage[normalem]{ulem}}
 
 %% Conditional inclusion
-\RequirePackage{version}
+\@ifpackageloaded{version}{}{\RequirePackage{version}}
 
 %% Links, refs, etc.
-\RequirePackage[bookmarks=true]{hyperref}
+\@ifpackageloaded{hyperref}{}{\RequirePackage[bookmarks=true]{hyperref}}
 
 % Package config
 \usemintedstyle{colorful}
@@ -97,3 +97,4 @@ postaction = {draw,line width=1.4pt, white,shorten >= 4.5pt}]
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
+
