@@ -14,7 +14,7 @@
 
 %% Math
 \@ifpackageloaded{amsmath}{}{\RequirePackage{amsmath}}
-\@ifpackageloaded{amsthm}{}{\let\proof\relax \let\endproof\relax \RequirePackage{amsthm}}
+\@ifpackageloaded{amsthm}{}{\RequirePackage{amsthm}}
 \@ifpackageloaded{amssymb}{}{\RequirePackage{amssymb}}
 \@ifpackageloaded{mathabx}{}{\RequirePackage{mathabx}}
 
@@ -27,8 +27,6 @@
 \@ifpackageloaded{color}{}{\RequirePackage{color}}
 
 %% Enumeration customization
-% Because the IEEE template has \labelindent defined for legacy reasons
-\let\labelindent\relax
 \@ifpackageloaded{enumitem}{}{\RequirePackage{enumitem}}
 
 %% Footnotes
@@ -38,6 +36,7 @@
 \@ifpackageloaded{caption}{}{\RequirePackage[font={footnotesize,it}]{caption}}
 \@ifpackageloaded{epsfig}{}{\RequirePackage{epsfig}}
 \@ifpackageloaded{graphicx}{}{\RequirePackage{graphicx}}
+\@ifpackageloaded{svg}{}{\RequirePackage{svg}}
 \@ifpackageloaded{subfig}{}{\RequirePackage{subfig}}
 \@ifpackageloaded{tikz}{}{\RequirePackage{tikz}}
 % Requires dot2tex installed
@@ -57,6 +56,7 @@
 
 %% Links, refs, etc.
 \@ifpackageloaded{hyperref}{}{\RequirePackage[bookmarks=true]{hyperref}}
+\@ifpackageloaded{cleveref}{}{\RequirePackage[nameinlink,capitalise]{cleveref}}
 
 % Package config
 \usemintedstyle{colorful}
@@ -70,6 +70,9 @@ postaction = {draw,line width=1.4pt, white,shorten >= 4.5pt}]
 \tikzstyle{innerWhite} = [semithick, white,line width=1.4pt, shorten >= 4.5pt]
 
 % Custom commands
+
+% Note: Many of these specialized ref commands may be obsolete due to the addition of cleveref to
+% this package.
 \newcommand{\appref}[1]{Appendix~\ref{appendix:#1}}
 \newcommand{\secref}[1]{Section~\ref{sec:#1}}
 \newcommand{\tblref}[1]{Table~\ref{table:#1}}
@@ -98,3 +101,6 @@ postaction = {draw,line width=1.4pt, white,shorten >= 4.5pt}]
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
 
+% Custom operators
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
