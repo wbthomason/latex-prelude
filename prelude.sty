@@ -17,8 +17,8 @@
 % \@ifpackageloaded{mathptmx}{}{\RequirePackage{mathptmx}} % assumes new font selection scheme installed
 
 %% Pseudocode
-\@ifpackageloaded{algpseudocode}{}{\RequirePackage{algpseudocode}}
-% \@ifpackageloaded{algorithm}{}{\RequirePackage{algorithm}}
+% \@ifpackageloaded{algpseudocode}{}{\RequirePackage{algpseudocode}}
+% \@ifpackageloaded{algorithm2e}{}{\RequirePackage[linesnumbered,ruled,vlined,commentsnumbered]{algorithm2e}}
 
 %% Math
 \@ifpackageloaded{amsmath}{}{\RequirePackage{amsmath}}
@@ -28,7 +28,7 @@
 
 %% Biblatex and associated packages
 \@ifpackageloaded{babel}{}{\RequirePackage[english]{babel}}
-\@ifpackageloaded{biblatex}{}{\RequirePackage[natbib=true,style=numeric-comp]{biblatex}}
+\@ifpackageloaded{biblatex}{}{\RequirePackage[maxbibnames=99,natbib=true,style=numeric-comp,backend=biber]{biblatex}}
 \@ifpackageloaded{csquotes}{}{\RequirePackage{csquotes}}
 
 %% Colors
@@ -40,6 +40,8 @@
 
 %% Footnotes
 \@ifpackageloaded{footmisc}{}{\RequirePackage[bottom]{footmisc}}% places footnotes at page bottom
+\@ifpackageloaded{footnote}{}{\RequirePackage{footnote}}% helps with footnotes in algorithms
+\makesavenoteenv{algorithm}
 
 %% Figures
 \@ifpackageloaded{caption}{}{\RequirePackage[font={footnotesize,it}]{caption}}
@@ -104,13 +106,6 @@ postaction = {draw,line width=1.4pt, white,shorten >= 4.5pt}]
 \newcommand{\wtnote}[1]{\ifbool{comments}{\textcolor{green}{\textbf{WT:} #1}}~}
 \newcommand{\wttodo}[1]{\ifbool{comments}{\todo[inline,author=WT,color=green!40]{#1}}~}
 \newcommand{\rknote}[1]{\ifbool{comments}{\textcolor{blue}{\textbf{RK:} #1}}~}
-
-% Custom theorems
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}
-
-\theoremstyle{plain}
-\newtheorem{theorem}{Theorem}
 
 % Custom operators
 \DeclareMathOperator*{\argmin}{arg\,min}
