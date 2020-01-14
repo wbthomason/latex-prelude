@@ -13,23 +13,23 @@
 
 %% Fonts/encoding
 \@ifpackageloaded{inputenc}{}{\RequirePackage[utf8]{inputenc}}
+\@ifpackageloaded{csquotes}{}{\RequirePackage{csquotes}}
 \@ifpackageloaded{fontenc}{}{\RequirePackage[T1]{fontenc}}
 % \@ifpackageloaded{mathptmx}{}{\RequirePackage{mathptmx}} % assumes new font selection scheme installed
 
+%% Biblatex and associated packages
+\@ifpackageloaded{babel}{}{\RequirePackage[english]{babel}}
+\@ifpackageloaded{biblatex}{}{\RequirePackage[maxbibnames=99,natbib=true,style=numeric-comp,backend=biber]{biblatex}}
+
 %% Pseudocode
-% \@ifpackageloaded{algpseudocode}{}{\RequirePackage{algpseudocode}}
-% \@ifpackageloaded{algorithm2e}{}{\RequirePackage[linesnumbered,ruled,vlined,commentsnumbered]{algorithm2e}}
+\@ifpackageloaded{algpseudocode}{}{\RequirePackage{algpseudocode}}
+\@ifpackageloaded{algorithm2e}{}{\RequirePackage[linesnumbered,ruled,vlined,commentsnumbered]{algorithm2e}}
 
 %% Math
 \@ifpackageloaded{amsmath}{}{\RequirePackage{amsmath}}
 \@ifpackageloaded{amsthm}{}{\RequirePackage{amsthm}}
 \@ifpackageloaded{amssymb}{}{\RequirePackage{amssymb}}
 \@ifpackageloaded{mathabx}{}{\RequirePackage{mathabx}}
-
-%% Biblatex and associated packages
-\@ifpackageloaded{babel}{}{\RequirePackage[english]{babel}}
-\@ifpackageloaded{biblatex}{}{\RequirePackage[maxbibnames=99,natbib=true,style=numeric-comp,backend=biber]{biblatex}}
-\@ifpackageloaded{csquotes}{}{\RequirePackage{csquotes}}
 
 %% Colors
 \@ifpackageloaded{color}{}{\RequirePackage{color}}
