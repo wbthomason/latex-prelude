@@ -86,8 +86,7 @@ postaction = {draw,line width=1.4pt, white,shorten >= 4.5pt}]
 \newcommand{\cf}{{cf.}}
 \newcommand{\ie}{{i.e.}}
 \newcommand{\etc}{{etc.\/}}
-\newcommand{\wtnote}[1]{\ifbool{comments}{\textcolor{green}{\textbf{WT:} #1}}~}
-\newcommand{\wttodo}[1]{\ifbool{comments}{\todo[inline,author=WT,color=green!40]{#1}}~}
+\newcommand{\wtnote}[2][noinline]{\ifbool{comments}{\todo[author=WT,color=green!40,#1]{#2}}{}}
 
 % Custom operators
 \DeclareMathOperator*{\argmin}{arg\,min}
