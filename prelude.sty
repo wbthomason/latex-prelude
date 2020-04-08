@@ -50,8 +50,6 @@
 \@ifpackageloaded{svg}{}{\RequirePackage{svg}}
 \@ifpackageloaded{subfig}{}{\RequirePackage{subfig}}
 \@ifpackageloaded{tikz}{}{\RequirePackage{tikz}}
-% Requires dot2tex installed
-\@ifpackageloaded{dot2texi}{}{\RequirePackage{dot2texi}}
 
 %% Syntax highlighting: Requires pygmentize and shell escape
 \ifthenelse{\boolean{minted}}{\@ifpackageloaded{minted}{}{\RequirePackage{minted}}}{}
@@ -84,28 +82,12 @@ postaction = {draw,line width=1.4pt, white,shorten >= 4.5pt}]
 
 % Custom commands
 
-% Note: Many of these specialized ref commands may be obsolete due to the addition of cleveref to
-% this package.
-\newcommand{\appref}[1]{Appendix~\ref{appendix:#1}}
-\newcommand{\secref}[1]{Section~\ref{sec:#1}}
-\newcommand{\tblref}[1]{Table~\ref{table:#1}}
-\newcommand{\figref}[1]{Figure~\ref{fig:#1}}
-\newcommand{\listingref}[1]{Listing~\ref{listing:#1}}
-\newcommand{\linref}[1]{line~\ref{line:#1}}
-\newcommand{\defref}[1]{Definition~\ref{def:#1}}
-\newcommand{\lemref}[1]{Lemma~\ref{lemma:#1}}
-\newcommand{\thmref}[1]{Theorem~\ref{thm:#1}}
-\newcommand{\eqnref}[1]{Formula~\ref{formula:#1}}
-\newcommand{\algoref}[1]{Algorithm~\ref{alg:#1}}
-\newcommand{\bftt}[1]{{\ttfamily\bfseries{}#1}}
-\newcommand{\kw}[1]{\bftt{#1}}
 \newcommand{\eg}{{e.g.}}
 \newcommand{\cf}{{cf.}}
 \newcommand{\ie}{{i.e.}}
 \newcommand{\etc}{{etc.\/}}
 \newcommand{\wtnote}[1]{\ifbool{comments}{\textcolor{green}{\textbf{WT:} #1}}~}
 \newcommand{\wttodo}[1]{\ifbool{comments}{\todo[inline,author=WT,color=green!40]{#1}}~}
-\newcommand{\rknote}[1]{\ifbool{comments}{\textcolor{blue}{\textbf{RK:} #1}}~}
 
 % Custom operators
 \DeclareMathOperator*{\argmin}{arg\,min}
