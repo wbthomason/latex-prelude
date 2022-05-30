@@ -22,21 +22,20 @@
 \@ifpackageloaded{biblatex}{}{\RequirePackage[maxbibnames=99,natbib=true,style=numeric-comp,backend=biber]{biblatex}}
 
 %% Pseudocode
-\@ifpackageloaded{algpseudocode}{}{\RequirePackage{algpseudocode}}
-\@ifpackageloaded{algorithm2e}{}{\RequirePackage[linesnumbered,ruled,vlined,commentsnumbered]{algorithm2e}}
+\@ifpackageloaded{algorithm2e}{}{\RequirePackage[linesnumbered,ruled,vlined,noend,commentsnumbered]{algorithm2e}}
 
 %% Math
 \@ifpackageloaded{amsmath}{}{\RequirePackage{amsmath}}
 \@ifpackageloaded{amsthm}{}{\RequirePackage{amsthm}}
 \@ifpackageloaded{amssymb}{}{\RequirePackage{amssymb}}
-\@ifpackageloaded{mathabx}{}{\RequirePackage{mathabx}}
+% \@ifpackageloaded{mathabx}{}{\RequirePackage{mathabx}}
 
 %% Colors
 \@ifpackageloaded{color}{}{\RequirePackage{color}}
 
 %% Enumeration customization
 \@ifpackageloaded{enumitem}{}{\let\labelindent\relax}
-\@ifpackageloaded{enumitem}{}{\RequirePackage{enumitem}}
+\@ifpackageloaded{enumitem}{}{\RequirePackage[inline]{enumitem}}
 
 %% Footnotes
 \@ifpackageloaded{footmisc}{}{\RequirePackage[bottom]{footmisc}}% places footnotes at page bottom
@@ -45,10 +44,10 @@
 
 %% Figures
 \@ifpackageloaded{caption}{}{\RequirePackage[font={footnotesize,it}]{caption}}
-\@ifpackageloaded{epsfig}{}{\RequirePackage{epsfig}}
+% \@ifpackageloaded{epsfig}{}{\RequirePackage{epsfig}}
 \@ifpackageloaded{graphicx}{}{\RequirePackage{graphicx}}
-\@ifpackageloaded{svg}{}{\RequirePackage{svg}}
-\@ifpackageloaded{subfig}{}{\RequirePackage{subfig}}
+% \@ifpackageloaded{svg}{}{\RequirePackage{svg}}
+\@ifpackageloaded{subcaption}{}{\RequirePackage{subcaption}}
 \@ifpackageloaded{tikz}{}{\RequirePackage{tikz}}
 
 %% Syntax highlighting: Requires pygmentize and shell escape
@@ -63,7 +62,7 @@
 \@ifpackageloaded{version}{}{\RequirePackage{version}}
 
 %% Links, refs, etc.
-\@ifpackageloaded{hyperref}{}{\RequirePackage[bookmarks=true]{hyperref}}
+\@ifpackageloaded{hyperref}{}{\RequirePackage[backref=page,bookmarks=true]{hyperref}}
 \@ifpackageloaded{cleveref}{}{\RequirePackage[nameinlink,capitalise]{cleveref}}
 
 %% Tables
